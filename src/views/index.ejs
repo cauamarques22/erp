@@ -1,0 +1,17 @@
+<%- include("includes/head")%>
+
+<h1>Produtos</h1>
+<div class="tabela-produtos">
+    <table>
+        <%for(let produto of produtos) { %>
+            <tr>
+                <td><%= produto.dataValues.nome %></td>
+                <td><%= produto.dataValues.preco %></td>
+                <td><%= produto.dataValues.status %></td>
+            </tr>
+        <%}%>
+    </table>
+    
+</div>
+
+<%- include("includes/foot")%>
