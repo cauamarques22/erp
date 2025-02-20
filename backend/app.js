@@ -45,8 +45,17 @@ class App {
         this.app.use(sessionOptions)
 
         //App Security
-        this.app.use(helmet())
-
+        this.app.use(helmet(
+            {contentSecurityPolicy: {
+                directives:{
+                    "default-src": ["'self'"],
+                    "script-src": ["'self'", "https://kit.fontawesome.com"],
+                    "connect-src": ["'self'", "https://kit.fontawesome.com", "https://ka-f.fontawesome.com"],
+                    "style-src": ["'self'", "'unsafe-inline'", "https://ka-f.fontawesome.com", "https://fonts.googleapis.com" ],
+                    "font-src": ["'self'", "https://ka-f.fontawesome.com", "https://fonts.googleapis.com/", "https://fonts.gstatic.com/"]
+                }
+            }}
+        ))
     }
 
     appMiddleware(){

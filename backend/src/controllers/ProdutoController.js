@@ -13,20 +13,11 @@ class ProdutoController {
             console.log(e)
             return
         }
-
     }
 
     //Cria um produto
     async create(req, res){
-        try{
-            const produtoCriado = await Produto.create(req.body)
-            res.json(produtoCriado)
-
-        } 
-        catch(e){
-            console.log(e)
-            return
-        }
+       return res.render("produtosCreate")
     }
 }
 

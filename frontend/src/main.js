@@ -1,3 +1,7 @@
 import "core-js/stable"
 import "regenerator-runtime/runtime"
-import "./assets/css/style.css"
+
+const btnCriaProduto = document.querySelector("#btn-create-product")
+btnCriaProduto.addEventListener("click", (e)=>{
+    window.location.href = "produtos/create/"
+})

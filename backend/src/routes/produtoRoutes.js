@@ -5,6 +5,6 @@ const router = new Router()
 //index
 router.get("/", produtoController.index)
 //create
-router.post("/", produtoController.create)
+router.get("/create/", produtoController.create)
 
 export default router

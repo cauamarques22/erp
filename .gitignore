@@ -1,2 +1,6 @@
 .env
 node_modules
+testes
+gpu_data.xlsx
+Untitled.ipynb
+.ipynb_checkpoints

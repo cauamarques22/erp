@@ -1,19 +1,85 @@
-<%- include("includes/head")%>
-<link rel="stylesheet" href="/produtos.css">
-</head>
-<body>
-<h1>Produtos</h1>
-<div class="tabela-produtos">
-    <table>
-        <%for(let produto of produtos) { %>
-            <tr>
-                <td><%= produto.dataValues.nome %></td>
-                <td><%= produto.dataValues.preco %></td>
-                <td><%= produto.dataValues.status %></td>
-            </tr>
-        <%}%>
-    </table>
-    
-</div>
+<%- include("includes/produtosHead")%>
+    <link rel="stylesheet" href="/produtosIndex.css">
+    <%-include("includes/navbar")%>
+    <div id="over-main-container">
 
-<%- include("includes/foot")%>
+        <h1>Cadastro de produtos</h1>
+        <div>
+            <div id="search-container">
+                <i class="fa-solid fa-filter"></i>
+                <input type="text"  name="" id="search-bar">
+            </div>
+
+            <div id="below-search">
+                <span>Limpar Filtros</span>
+            </div>
+
+            <div id="table-options">
+
+                <div id="table-icons-left">
+                    <input type="checkbox"  title="Selecionar Todos" name="" id="">
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+
+                <div id="table-icons-right">
+                    <i class="fa-solid fa-list"></i>
+                    <i class="fa-solid fa-bars-progress"></i>
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+    <div class="content-container">
+        <aside style="order:2">
+            <div id="aside-wrapper">
+                <div><!-- Menu lateral Direito -->
+                    <button id="btn-create-product" class="utils-button">Criar Produto</button>
+                    <button id="btn-delete-product" class="utils-button">Deletar Produto</button>
+                    <button id="btn-export-ecommerce" class="utils-button">Exportar Produtos E-commerce</button>
+                    <button id="btn-export-excel" class="utils-button">Exportar Dados para Planilhas</button>
+                </div> 
+            </div>
+        </aside>
+    
+        <section style="order:1" class="main-content">
+            <div class="table-container"><!-- Conteúdo Principal -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="th1"></th>
+                            <th id="th2">Imagem</th>
+                            <th id="th3">Nome</th>
+                            <th id="th4">Código</th>
+                            <th id="th5">Preço</th>
+                            <th id="th6">Estoque</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <% for(let produto of produtos) { %>
+                        <tr>
+                            <td class="td1">
+                                <input type="checkbox">
+                            </td>
+                            <td class="td2">
+                                <i class="fa-solid fa-image"></i>
+                            </td>
+                            <td class="td3"><%= produto.dataValues.nome %></td>
+                            <td class="td4"><%= produto.dataValues.id %></td>
+                            <td class="td5"><%= produto.dataValues.preco %></td>
+                            <td class="td6">Não criei o estoque</td>
+                        </tr>
+                        <% } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    
+
+<%- include("includes/produtosFoot")%>
