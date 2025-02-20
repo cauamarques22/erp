@@ -3,7 +3,7 @@ require("dotenv").config()
 //databaseConfig
 //são as configurações do banco de dados
 module.exports = {
-    dialect: "mariadb", //dialeto varia de projeto pra projeto
+    dialect: "mysql", //dialeto varia de projeto pra projeto
     host: process.env.DATABASE_HOST,
     port: process.env.DATABASE_PORT,
     username: process.env.DATABASE_USERNAME,
