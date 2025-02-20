@@ -13,11 +13,11 @@ module.exports = {
         timestamps: true,
         underscored: true,
         underscoredAll: true,
-        "createdAt": "created_at",
-        "updatedAt": "updated_at",
+        createdAt: "created_at",
+        updatedAt: "updated_at",
     },
     dialectOptions: {
-        timezone: "local"
+        timezone: "-03:00"
     },
-    timezone: "local"
+    timezone: "-03:00"
 }
