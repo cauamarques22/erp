@@ -6,7 +6,6 @@ class ProdutoController {
     async index(req, res){
         try{
             const produtos = await Produto.findAll()
-            console.log(produtos[0].dataValues.nome)
             return res.render("produtosIndex", {produtos})
         }
         catch(e){
